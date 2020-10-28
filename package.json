@@ -2,9 +2,17 @@
   "name": "react-starter-bwm",
   "version": "0.1.0",
   "private": true,
+  "proxy": {
+    "api/v1/*": {
+      "target": "http://localhost:3001"
+    }
+  },
   "dependencies": {
+    "axios": "^0.21.0",
     "bootstrap": "^4.5.3",
+    "camel-case": "^3.0.0",
     "express": "^4.17.1",
+    "font-awesome": "^4.7.0",
     "jquery": "^3.5.1",
     "mongoose": "^5.10.10",
     "node-sass-chokidar": "^1.5.0",
@@ -12,12 +20,14 @@
     "popper.js": "^1.16.1",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
+    "react-google-maps": "^9.4.5",
     "react-instagram-embed": "^1.5.0",
     "react-redux": "^7.2.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "1.1.4",
     "redux": "^4.0.5",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "titleize": "^2.1.0"
   },
   "scripts": {
     "build-css": "node-sass-chokidar ./src -o ./src",
