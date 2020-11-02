@@ -1,20 +1,18 @@
-import { rentalReducer, selectedRentalReducer } from './rental-reducer';
 import thunk from 'redux-thunk';
-
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 
-
-//import { authReducer } from './auth-reducer';
+import { rentalReducer, selectedRentalReducer } from './rental-reducer';
+import { authReducer } from './auth-reducer';
 //import { rentalMapReducer } from './map-reducer';
 //import { userBookingsReducer } from './booking-reducer';
-//import { reducer as formReducer } from 'redux-form';
+import { reducer as formReducer } from 'redux-form';
 
 export const init = () => {
   const reducer = combineReducers({
     rentals: rentalReducer,
-    rental: selectedRentalReducer
-    //form: formReducer,
-    //auth: authReducer,
+    rental: selectedRentalReducer,
+    form: formReducer,
+    auth: authReducer
     //userBookings: userBookingsReducer,
     //map: rentalMapReducer
   });
