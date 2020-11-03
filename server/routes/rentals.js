@@ -14,17 +14,28 @@ router.get('', function(req, res) {
 	});
 });
 
+router.get('', function(req, res) {
+  Rental.find({})
+      .exec(function(err, foundRentals) {
+
+    return res.json(foundRentals);
+  });
+});
+
 router.get('/:id', function(req, res) {
-	const rentalId = req.params.id;
+  const rentalId = req.params.id;
 
-	Rental.findById(rentalId, function(err, foundRental) {
-		if (err) {
-			res.status(422).send({errors: [{title: 'Rental Error!', detail: 'Could not find Rental'}]});
-		}
+  Rental.findById(rentalId)
+        .populate('user', 'username -_id')
+        .exec(function(err, foundRental) {
 
-		res.json(foundRental);
-	})
-})
+    if (err || !foundRental) {
+      return res.status(422).send({errors: [{title: 'Rental Error!', detail: 'Could not find Rental!'}]});
+    }
+
+    return res.json(foundRental);
+  });
+});
 
 module.exports = router;
 
