@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-//import RentalSearchInput from 'components/rental/RentalSearchInput';
+import RentalSearchInput from 'components/rental/RentalSearchInput';
 
 class Header extends React.Component {
 
@@ -56,6 +56,7 @@ class Header extends React.Component {
           <Link className='navbar-brand' to='/rentals'>BookWithMe
             <img src={process.env.PUBLIC_URL + '/img/react-logo.svg'} alt=""/>
           </Link>
+          <RentalSearchInput />
           <button className='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarNavAltMarkup' aria-controls='navbarNavAltMarkup' aria-expanded='false' aria-label='Toggle navigation'>
             <span className='navbar-toggler-icon'></span>
           </button>
