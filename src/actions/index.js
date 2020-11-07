@@ -87,6 +87,22 @@ export const createRental = (rentalData) => {
   )
 }
 
+// USER RENTALS ACTIONS ---------------------------
+
+export const getUserRentals = () => {
+  return axiosInstance.get('/rentals/manage').then(
+    res => res.data,
+    err => Promise.reject(err.response.data.errors)
+  )
+}
+
+export const deleteRental = (rentalId) => {
+  return axiosInstance.delete(`/rentals/${rentalId}`).then(
+    res => res.data,
+    err => Promise.reject(err.response.data.errors))
+}
+
+
 // AUTH ACTIONS ---------------------------
 
 const loginSuccess = () => {

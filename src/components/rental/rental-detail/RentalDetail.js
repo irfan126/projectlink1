@@ -36,7 +36,6 @@ const rentalId = this.props.match.params.id;
                 <div className='col-md-8'>
                 <RentalDetailInfo rental={rental} />
                 </div>
-                <div className='col-md-4'> BOOKING</div>
               </div>
             </div>
           </section>
